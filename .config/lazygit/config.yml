@@ -1,0 +1,4 @@
+commit:
+        signOff: true
+os:
+        editPreset: 'nvim'
