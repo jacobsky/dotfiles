@@ -1,4 +1,5 @@
-commit:
-        signOff: true
-os:
-        editPreset: 'nvim'
+git:
+  commit:
+    signOff: true
+  os:
+    editPreset: 'nvim'

@@ -8,6 +8,7 @@ fi
 
 export GOPATH=$HOME/go
 export PATH="$PATH:/snap/bin/:/home/jacobsky/.cargo/bin/:/usr/local/go/bin:/usr/local/bin:$GOPATH/bin:/home/jacobsky/.local/bin"
+alias vim=nvim
 export EDITOR=nvim
 export VISUAL=$EDITOR
 source "${ZINIT_HOME}/zinit.zsh"
