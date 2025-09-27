@@ -17,7 +17,8 @@ _darcs
 
 .+~          # emacs backup files
 \#.*\#       # emacs autosave files
-/scripts
+/scripts/
+/archcfg/
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
