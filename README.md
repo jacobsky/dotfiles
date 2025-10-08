@@ -23,6 +23,16 @@ $ stow .
 
 ## Arch CFG
 
+Configuring arch should be done via the following commands:
+
+```
+sudo useradd -m [username]
+sudo passwd [username]
+sudo usermod -aG wheel [username]
+```
+
+Finally, it will be necessary to edit the `/etc/sudoers` file to allow the wheel members access
+
 To help track the "generally used arch packages" that I use, I am maintaining both the `pacman` and `yay` (AUR) packages.
 
 Install them as per

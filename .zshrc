@@ -9,6 +9,8 @@ fi
 export GOPATH=$HOME/go
 export PATH="$PATH:/home/jacobsky/.cargo/bin/:/usr/local/sbin:/usr/local/bin:$GOPATH/bin:/home/jacobsky/.local/bin"
 alias vim=nvim
+alias lg=lazygit
+alias lzd=lazydocker
 export EDITOR=nvim
 export VISUAL=$EDITOR
 source "${ZINIT_HOME}/zinit.zsh"
@@ -25,6 +27,7 @@ autoload -U compinit && compinit
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey -e
+bindkey '^[[3~' delete-char
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[[1;5C' forward-word
