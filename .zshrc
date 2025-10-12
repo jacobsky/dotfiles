@@ -27,7 +27,9 @@ autoload -U compinit && compinit
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 bindkey -e
+bindkey '^H' backward-kill-word
 bindkey '^[[3~' delete-char
+bindkey '^[[3;5~' kill-word
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[[1;5C' forward-word
