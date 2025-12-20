@@ -1,2 +1,5 @@
-yay-bin
+aspnet-runtime-9.0-bin
+opencode-bin
+yay
 yay-bin-debug
+yay-debug

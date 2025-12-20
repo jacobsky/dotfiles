@@ -1,0 +1,2 @@
+# Go stores a _lot_ of junk and I don't want to accidentally put it in source control
+.config/go/*

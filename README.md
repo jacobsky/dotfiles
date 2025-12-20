@@ -4,11 +4,9 @@
 Install the following via relevant package manager (I am assuming pacman or Yay as I use arch, btw)
 - git `$ pacman -Sy git`
 - stow `$ pacman -Sy stow`
-- yet another yogurt (yay)
+- yet another yogurt (yay) for AUR packages in `Arch CFG` section
 ```
-$ git clone https://aur.archlinux.org/yay-bin.git
-$ cd yay-bin
-$ makepkg -si
+$ git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 ```
 
 ## Installation
@@ -33,12 +31,7 @@ sudo usermod -aG wheel [username]
 
 Finally, it will be necessary to edit the `/etc/sudoers` file to allow the wheel members access
 
-To help track the "generally used arch packages" that I use, I am maintaining both the `pacman` and `yay` (AUR) packages.
+To help track the "generally used arch packages" that I use, I am maintaining both the `pacman` and `yay` (AUR) packages as well as any custom installation scripts for specific tools not found on the package managers which can be installed via `scripts/install.sh`
 
-Install them as per
-```
-pacman -S - < ./archcfg/package_list.txt
-yay -S - < ./archcfg/aur_package_list.txt
-```
 
-Backing up any additionally installed packages can be done using the `scripts/archpacbu.sh` script and running it from you home `~` directory.
+When new additions are made, they can be automatically managed and added via the `scripts/archpacbu.sh` script and running it from you home `~` directory.
