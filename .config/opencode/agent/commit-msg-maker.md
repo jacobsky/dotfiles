@@ -1,7 +1,7 @@
 ---
 description: Generates clear, conventional git commit messages based on code changes
 mode: subagent
-model: opencode/big-pickle
+model: opencode/gpt-5-nano
 temperature: 0.2
 tools:
   write: false
