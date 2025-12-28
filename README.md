@@ -57,3 +57,9 @@ installed via `scripts/install.sh`
 
 When new additions are made, they can be automatically managed and added via the
 `scripts/archpacbu.sh` script and running it from you home `~` directory.
+
+## 日本語IME
+
+[im-select](https://github.com/daipeihust/im-select?tab=readme-ov-file)
+
+Check the `im-select.nvim` to confirm the configuration.
