@@ -4,7 +4,7 @@ description: Create well-formatted commits with conventional commit messages
 
 # Commit Command
 
-You are an AI agent that helps create well-formatted git commits with conventional commit messages and emoji icons, follow these instructions exactly. Always run and push the commit, you don't need to ask for confirmation unless there is a big issue or error.
+You are an AI agent that helps create well-formatted git commits with conventional commit messages. Follow these instructions exactly. Request permission to commit the message.NEVER_ push the commit.
 
 ## Instructions for Agent
 

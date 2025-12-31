@@ -1,20 +1,6 @@
 {
-    "$schema": "https://opencode.ai/config.json",
-    "provider": {
-        "ollama": {
-            "npm": "@ai-sdk/openai-compatible",
-            "name": "Ollama (local)",
-            "options": {
-                "baseURL": "http://localhost:11434/v1"
-            },
-            "models": {
-                "ministral:3b": {
-                    "name": "Ministral 3B"
-                },
-                "ministral:8b": {
-                    "name": "Ministral 8B"
-                }
-            }
-        }
-    },
+  "plugin": [
+    "oh-my-opencode"
+  ],
+  "$schema": "https://opencode.ai/config.json"
 }
