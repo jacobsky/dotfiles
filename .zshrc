@@ -8,6 +8,7 @@ fi
 
 export GOPATH=$HOME/go
 export PATH="$PATH:/home/jacobsky/.cargo/bin/:/usr/local/sbin:/usr/local/bin:$GOPATH/bin:/home/jacobsky/.local/bin"
+export PATH="$PATH:/mnt/c/Tools/"
 alias vim=nvim
 alias lg=lazygit
 alias lzd=lazydocker

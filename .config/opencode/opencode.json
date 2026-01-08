@@ -1,6 +1,24 @@
 {
-  "plugin": [
-    "oh-my-opencode"
-  ],
-  "$schema": "https://opencode.ai/config.json"
+    "plugin": [
+        "oh-my-opencode"
+    ],
+    "lsp": {
+        "gdlint": {
+            "command": [
+                "~/.local/share/nvim/mason/bin/gdlint"
+            ],
+            "extensions": [
+                ".gd"
+            ]
+        },
+        "gdformat": {
+            "command": [
+                "~/.local/share/nvim/mason/bin/gdformat"
+            ],
+            "extensions": [
+                ".gd"
+            ]
+        }
+    },
+    "$schema": "https://opencode.ai/config.json"
 }
