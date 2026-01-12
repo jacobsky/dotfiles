@@ -1,5 +1,7 @@
 aspnet-runtime-9.0-bin
+lazysql
 opencode-bin
+pacsea-bin
 yay
 yay-bin-debug
 yay-debug

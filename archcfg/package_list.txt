@@ -1,6 +1,7 @@
 apache
 base
 base-devel
+bat
 bind
 dotnet-sdk
 dotnet-sdk-9.0
@@ -15,6 +16,8 @@ jq
 lazydocker
 lazygit
 less
+librime
+libxkbcommon
 lsof
 luarocks
 make
@@ -24,11 +27,13 @@ nvidia-container-toolkit
 openssh
 podman
 python
+python-pip
 ripgrep
 rustup
 stow
 sudo
 tailscale
+tmux
 unzip
 wget
 xh

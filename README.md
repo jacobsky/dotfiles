@@ -56,7 +56,7 @@ scripts for specific tools not found on the package managers which can be
 installed via `scripts/install.sh`
 
 When new additions are made, they can be automatically managed and added via the
-`scripts/archpacbu.sh` script and running it from you home `~` directory.
+`scripts/archpacbu.sh` script and running it from your home `~` directory.
 
 ## 日本語IME
 

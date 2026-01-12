@@ -12,6 +12,7 @@ export PATH="$PATH:/mnt/c/Tools/"
 alias vim=nvim
 alias lg=lazygit
 alias lzd=lazydocker
+alias lsql=lazysql
 export EDITOR=nvim
 export VISUAL=$EDITOR
 source "${ZINIT_HOME}/zinit.zsh"
