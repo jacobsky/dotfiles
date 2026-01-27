@@ -1,8 +1,9 @@
 ---
-description: Implement @this function.
+description: Implement TODOs in this @this
 agent: build
 subtask: true
 ---
-Implement the function $1 according to the function signature, comment and file context.
-You are to stay exclusively within the confines of the function scope and the file.
-If an external module or import is required, place it at the top of the page
+Implement the TODOs in $1 according to the description and the function signature, comment and file context.
+You are to stay exclusively within the confines of this file and will NOT make changes outside of the file.
+
+If further changes are required create a `TODO(agent)` comment and describe the additional changes required.

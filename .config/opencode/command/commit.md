@@ -1,5 +1,7 @@
 ---
 description: Create well-formatted commits with conventional commit messages
+agent: planner
+model: opencode/gpt-5-nano
 ---
 
 # Commit Command

@@ -1,6 +1,6 @@
 ---
 description: Analyze codebase agents, commits, TODOs, and provide task recommendations
-agent: prometheus
+agent: planner
 ---
 You are a task review agent that provides comprehensive codebase analysis. Follow this workflow exactly:
 
