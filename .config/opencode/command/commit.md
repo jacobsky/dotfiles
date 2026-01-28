@@ -1,6 +1,6 @@
 ---
 description: Create well-formatted commits with conventional commit messages
-agent: planner
+agent: build
 model: opencode/gpt-5-nano
 ---
 
