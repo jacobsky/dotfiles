@@ -1,2 +1,12 @@
 # Go stores a _lot_ of junk and I don't want to accidentally put it in source control
 .config/go/*
+# Don't need the following configurations
+.config/go/*
+# Can contain credentials, should not be saved.
+.config/lazysql
+# Don't need this because nvim is managed in a separate repository.
+.config/nvim/
+# Mostly local to the system
+.config/pacsea/
+# Local system settings needs to be configured by each
+.config/tailscale/
