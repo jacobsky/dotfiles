@@ -1,5 +1,5 @@
 ---
-description: Review the currently staged changes
+description: Review the currently staged changes (use --skill=code-reviewer for advanced analysis)
 agent: build
 subtask: true
 ---
@@ -7,6 +7,13 @@ subtask: true
 # Code Review Command
 
 You are an expert code reviewer specializing in comprehensive analysis of staged changes. Follow this workflow exactly to provide thorough, actionable feedback.
+
+## Enhanced Review Options
+
+**Standard Review** (current command): Quick, focused analysis of staged changes
+**Advanced Review** (`/codereview --skill=code-reviewer`): Multi-dimensional analysis with security, performance, and architectural insights
+
+To use the advanced code-reviewer skill, run: `/codereview --skill=code-reviewer` or invoke the skill directly with `/skill code-reviewer`
 
 ## Step 1: Change Analysis
 - Run `git status --porcelain` to verify staged changes exist
