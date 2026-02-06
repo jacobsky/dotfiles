@@ -1,4 +1,3 @@
-aspnet-runtime-9.0-bin
 lazysql
 opencode-bin
 pacsea-bin

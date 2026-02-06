@@ -1,8 +1,12 @@
 apache
+aspnet-runtime
+aspnet-runtime-9.0
+aspnet-targeting-pack
 base
 base-devel
 bat
 bind
+clang
 dotnet-sdk
 dotnet-sdk-9.0
 fd
@@ -11,8 +15,11 @@ gcc
 git
 git-lfs
 go
+godot
 imagemagick
+jdk-openjdk
 jq
+just
 lazydocker
 lazygit
 less
@@ -21,6 +28,7 @@ libxkbcommon
 lsof
 luarocks
 make
+maven
 neovim
 npm
 nvidia-container-toolkit
@@ -28,8 +36,10 @@ openssh
 podman
 python
 python-pip
+python-yaml
 ripgrep
 rustup
+sqlfluff
 stow
 sudo
 tailscale
@@ -37,5 +47,6 @@ tmux
 unzip
 wget
 xh
+xorg-server-devel
 zoxide
 zsh
