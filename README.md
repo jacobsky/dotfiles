@@ -11,6 +11,25 @@ wsl.exe --install archlinux
 wsl.exe --set-default archlinux
 ```
 
+#### .wslconfig (highly recommended)
+
+WSL has a tendency to consume at minimum 8GB of memory or _half_ of your total available memory. This includes your page file which windows tends to double. This means that even when idling, it will, by default, consume _all the memory_ even when your active processes are using considerably less.
+
+In your `%UserProfile%` directory create a `.wslconfig` file
+
+The following is a minimum configuration that you can use.
+
+```bash
+[wsl2]
+memory=6GB # How much memory to assign to the WSL2 VM. (too low and you'll oom)
+processors=2 # How many processors to assign to the WSL2 VM. (too low and parallel tasks may take longer)
+swap=0 # Disable the swap to avoid pushing memory back and forth to the pagefile
+
+# Used to help keep memory management under control
+[experimental]
+autoMemoryReclaim=gradual
+```
+
 ### Package configuration
 
 Follow `# Arch CFG` to configure all the packages assumed on the system _or_
