@@ -1,0 +1,35 @@
+[general]
+import = ["./themes/tokyo-night-storm.toml"]
+
+[window]
+
+opacity = 0.9
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "Dark"
+
+[font]
+size = 12.0
+
+normal.family = "Hack Nerd Font"
+bold.family = "Hack Nerd Font"
+italic.family = "Hack Nerd Font"
+bold_italic.family = "Hack Nerd Font"
+
+[terminal]
+shell = "wsl.exe --distribution archlinux --cd ~"
+
+[keyboard]
+bindings = [
+    { key = "Space", mods = "Control|Shift", action = "ToggleViMode" },
+    { key = "Y", mode = "Vi", action = "Copy" },
+    { key = "Y", mods = "Shift", mode = "Vi", action = "Copy" },
+    { key = "P", mode = "Vi", action = "Paste" },
+    { key = "P", mods = "Shift", mode="Vi", action = "PasteSelection" },
+    { key = "V", mode = "Vi", action = "ToggleNormalSelection" },
+    { key = "Slash", mode = "Vi", action = "SearchForward" },
+    { key = "Slash", mods = "Shift", mode="Vi", action = "SearchBackward" },
+]
