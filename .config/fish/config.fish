@@ -4,6 +4,7 @@ set -gx PATH $PATH ~/.cargo/bin/ /usr/local/sbin /usr/local/bin $GOPATH/bin ~/.l
 set -gx PATH $PATH /mnt/c/Tools/
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+set -g fish_vi_key_bindings
 
 # Aliases
 alias vim nvim
