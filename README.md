@@ -77,9 +77,9 @@ installed via `scripts/install.sh`
 When new additions are made, they can be automatically managed and added via the
 `scripts/archpacbu.sh` script and running it from your home `~` directory.
 
-## tmux package manager
+## (manual) tmux package manager
 
-Install tmux plugin manager to
+This should be automatically taken care of by the dofiles, but if it hasn't, please install tmux plugin manager to
 
 ```
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
