@@ -77,6 +77,16 @@ installed via `scripts/install.sh`
 When new additions are made, they can be automatically managed and added via the
 `scripts/archpacbu.sh` script and running it from your home `~` directory.
 
+## tmux package manager
+
+Install tmux plugin manager to
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+use <leader>+I to install all the plugins in an active tmux session
+
 ## 日本語IME
 
 [im-select](https://github.com/daipeihust/im-select?tab=readme-ov-file)
