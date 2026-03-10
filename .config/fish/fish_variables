@@ -1,3 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_kpbaks_2F_zellij_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/zellij\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ekpbaks/zellij\x2efish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR zellij_fish_dump_full_screen:0
+SETUVAR zellij_fish_update_tab_name_on_preexec:0
+SETUVAR zellij_fish_update_tab_name_on_preexec_blacklist:pwd\x1ecd\x1erm\x1emv
+SETUVAR zellij_fish_update_tab_name_when_cwd_changes:1

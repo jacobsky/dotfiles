@@ -10,6 +10,7 @@ clang
 dotnet-sdk
 dotnet-sdk-9.0
 fd
+fish
 fzf
 gcc
 git
@@ -28,6 +29,7 @@ libxkbcommon
 lsof
 luarocks
 make
+man-db
 maven
 neovim
 npm
@@ -40,6 +42,7 @@ python-yaml
 ripgrep
 rustup
 sqlfluff
+starship
 stow
 sudo
 tailscale
@@ -48,5 +51,6 @@ unzip
 wget
 xh
 xorg-server-devel
+zellij
 zoxide
 zsh
