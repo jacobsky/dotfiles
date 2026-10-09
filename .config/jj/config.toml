@@ -1,0 +1,22 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+[user]
+name = "Kyle Ichii Jacobsen"
+email = "kyle.jacobsen@vpj.co.jp"
+
+[ui]
+# Set nvim as the default editor for commit messages / descriptions
+editor = "nvim"
+
+# Set nvim as the interactive diff editor (for jj squash -i / jj split)
+diff-editor = ":builtin"
+ignored-paths = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.git", "**/*.webp"]
+
+[git]
+track-default-bookmark-on-clone = true
+push-bookmark-prefix = ""
+push-new-bookmarks = false
+auto-local-bookmark = true
+
+[revsets]
+# Immutable protection for core branches
+immutable-heads = "builtin_non_empty_immutable_heads() | main | master | branches(glob:'release/*')"

@@ -1,0 +1,164 @@
+[
+  {
+    "plugin_id": "ezracerpac.jj-waltz",
+    "name": "jj-waltz",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Create and remove jj-waltz workspaces from Herdr.",
+    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4/plugins/herdr/herdr-plugin.toml",
+    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4/plugins/herdr",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "command": [
+          "sh",
+          "scripts/build.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "new",
+        "title": "New jw workspace",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-jj-waltz",
+          "open",
+          "workspace"
+        ]
+      },
+      {
+        "id": "new-tab",
+        "title": "New jw workspace in tab",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-jj-waltz",
+          "open",
+          "tab"
+        ]
+      },
+      {
+        "id": "remove",
+        "title": "Remove jw workspace",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "./target/release/herdr-jj-waltz",
+          "open",
+          "remove"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "create",
+        "title": "New jw workspace",
+        "placement": "overlay",
+        "command": [
+          "./target/release/herdr-jj-waltz",
+          "create"
+        ]
+      },
+      {
+        "id": "remove",
+        "title": "Remove jw workspace",
+        "placement": "overlay",
+        "command": [
+          "./target/release/herdr-jj-waltz",
+          "remove"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "EzraCerpac",
+      "repo": "jj-waltz",
+      "subdir": "plugins/herdr",
+      "resolved_commit": "350ea473cd9150cf8b1ad19f19060c48045d3a03",
+      "managed_path": "/home/jacobsky/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4",
+      "installed_unix_ms": 1785831693382
+    }
+  },
+  {
+    "plugin_id": "mroth.jj-status",
+    "name": "jj status",
+    "version": "0.1.1",
+    "min_herdr_version": "0.7.5",
+    "description": "Show the Jujutsu bookmark and status for jj workspaces in the spaces sidebar",
+    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe/herdr-plugin.toml",
+    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "startup": [
+      {
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "refresh",
+        "title": "jj status: refresh all",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "workspace.created",
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      },
+      {
+        "on": "worktree.created",
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "command": [
+          "bash",
+          "bin/refresh.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "mroth",
+      "repo": "herdr-jj-status",
+      "resolved_commit": "40588ef743e1dd6a252b2e39765616584fd2e39e",
+      "managed_path": "/home/jacobsky/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe",
+      "installed_unix_ms": 1785831656727
+    }
+  }
+]
