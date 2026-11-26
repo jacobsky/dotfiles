@@ -1,6 +1,4 @@
+jjui
 lazysql
-opencode-bin
-pacsea-bin
-yay
-yay-bin-debug
-yay-debug
+plannotator-tui-bin
+sqlit
