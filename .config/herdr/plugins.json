@@ -1,91 +1,243 @@
 [
   {
-    "plugin_id": "ezracerpac.jj-waltz",
-    "name": "jj-waltz",
-    "version": "0.1.0",
-    "min_herdr_version": "0.7.0",
-    "description": "Create and remove jj-waltz workspaces from Herdr.",
-    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4/plugins/herdr/herdr-plugin.toml",
-    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4/plugins/herdr",
+    "plugin_id": "annotate",
+    "name": "Annotate",
+    "version": "0.9.3",
+    "min_herdr_version": "0.8.0",
+    "description": "Comment on terminal selections and copy annotations as agent context.",
+    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/annotate-9c299759567c/3836-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/annotate-9c299759567c/3836-0/checkout",
     "enabled": true,
     "platforms": [
       "linux",
-      "macos"
+      "macos",
+      "windows"
     ],
     "build": [
       {
+        "platforms": [
+          "macos",
+          "linux"
+        ],
         "command": [
-          "sh",
-          "scripts/build.sh"
+          "bash",
+          "scripts/fetch-herdr-annotate.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell.exe",
+          "-NoProfile",
+          "-NonInteractive",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-herdr-annotate.ps1"
+        ]
+      },
+      {
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "bash",
+          "scripts/fetch-plannotator-tui.sh"
         ]
       }
     ],
     "actions": [
       {
-        "id": "new",
-        "title": "New jw workspace",
+        "id": "capture",
+        "title": "Annotate selection",
+        "description": "Open a comment dialog for the current terminal selection.",
         "contexts": [
-          "workspace"
+          "pane"
         ],
         "command": [
-          "./target/release/herdr-jj-waltz",
-          "open",
-          "workspace"
+          "./bin/herdr-annotate.exe",
+          "capture"
         ]
       },
       {
-        "id": "new-tab",
-        "title": "New jw workspace in tab",
+        "id": "copy-archive",
+        "title": "Copy annotations as context and archive them",
+        "description": "Copy all saved annotations to the clipboard as Markdown, then archive them.",
         "contexts": [
-          "workspace"
+          "global"
         ],
         "command": [
-          "./target/release/herdr-jj-waltz",
-          "open",
-          "tab"
+          "./bin/herdr-annotate.exe",
+          "copy-archive"
         ]
       },
       {
-        "id": "remove",
-        "title": "Remove jw workspace",
+        "id": "copy-context",
+        "title": "Copy annotations as context",
+        "description": "Copy all saved annotations to the clipboard as Markdown.",
         "contexts": [
-          "workspace"
+          "global"
         ],
         "command": [
-          "./target/release/herdr-jj-waltz",
-          "open",
-          "remove"
+          "./bin/herdr-annotate.exe",
+          "copy-context"
+        ]
+      },
+      {
+        "id": "last",
+        "title": "Annotate: agent's last message",
+        "description": "Review the focused agent's most recent message in plannotator-tui and send feedback back.",
+        "contexts": [
+          "pane"
+        ],
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "./bin/plannotator-tui.exe",
+          "herdr",
+          "last"
+        ]
+      },
+      {
+        "id": "last-newest",
+        "title": "Annotate: agent's newest message",
+        "description": "Review the focused agent's newest message in plannotator-tui, without choosing from a picker first.",
+        "contexts": [
+          "pane"
+        ],
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "./bin/plannotator-tui.exe",
+          "herdr",
+          "last",
+          "--newest"
+        ]
+      },
+      {
+        "id": "manage",
+        "title": "Manage annotations",
+        "description": "Browse, edit, copy, archive, restore, and delete annotations.",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "./bin/herdr-annotate.exe",
+          "manage"
+        ]
+      },
+      {
+        "id": "open",
+        "title": "Annotate: open here",
+        "description": "Review the focused pane's folder in plannotator-tui and send feedback to its agent.",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "./bin/plannotator-tui.exe",
+          "herdr",
+          "open"
+        ]
+      },
+      {
+        "id": "paste-archive",
+        "title": "Paste annotations into the agent's prompt and archive them",
+        "description": "Paste all saved annotations into the focused agent's prompt without sending, then archive them.",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "./bin/herdr-annotate.exe",
+          "paste-archive"
+        ]
+      },
+      {
+        "id": "send-archive",
+        "title": "Send annotations to the agent and archive them",
+        "description": "Send all saved annotations as the focused agent's next message, then archive them.",
+        "contexts": [
+          "pane"
+        ],
+        "command": [
+          "./bin/herdr-annotate.exe",
+          "send-archive"
+        ]
+      },
+      {
+        "id": "terminal",
+        "title": "Annotate: terminal output",
+        "description": "Review the focused pane's recent terminal output in plannotator-tui and send feedback back.",
+        "contexts": [
+          "pane"
+        ],
+        "platforms": [
+          "macos",
+          "linux"
+        ],
+        "command": [
+          "./bin/plannotator-tui.exe",
+          "herdr",
+          "terminal"
         ]
       }
     ],
     "panes": [
       {
-        "id": "create",
-        "title": "New jw workspace",
+        "id": "doc",
+        "title": "Annotate",
+        "platforms": [
+          "macos",
+          "linux"
+        ],
         "placement": "overlay",
         "command": [
-          "./target/release/herdr-jj-waltz",
-          "create"
+          "sh",
+          "-c",
+          "exec bash \"$HERDR_PLUGIN_ROOT/scripts/plannotator-tui.sh\" herdr pane"
         ]
       },
       {
-        "id": "remove",
-        "title": "Remove jw workspace",
-        "placement": "overlay",
+        "id": "editor",
+        "title": "Annotate",
+        "placement": "popup",
+        "width": 88,
+        "height": 24,
         "command": [
-          "./target/release/herdr-jj-waltz",
-          "remove"
+          "./bin/herdr-annotate.exe",
+          "editor"
+        ]
+      },
+      {
+        "id": "manager",
+        "title": "Annotations",
+        "placement": "popup",
+        "width": 100,
+        "height": 30,
+        "command": [
+          "./bin/herdr-annotate.exe",
+          "manager"
         ]
       }
     ],
     "source": {
       "kind": "github",
-      "owner": "EzraCerpac",
-      "repo": "jj-waltz",
-      "subdir": "plugins/herdr",
-      "resolved_commit": "350ea473cd9150cf8b1ad19f19060c48045d3a03",
-      "managed_path": "/home/jacobsky/.config/herdr/plugins/github/ezracerpac.jj-waltz-1b3af96734b4",
-      "installed_unix_ms": 1785831693382
+      "owner": "plannotator",
+      "repo": "herdr-annotate",
+      "resolved_commit": "b8b9de1aee7039651be315441c8d6a0f3e869c84",
+      "managed_path": "/home/jacobsky/.config/herdr/plugins/github-installations/annotate-9c299759567c/3836-0/checkout",
+      "installed_unix_ms": 1792972303276
     }
   },
   {
@@ -94,8 +246,8 @@
     "version": "0.1.1",
     "min_herdr_version": "0.7.5",
     "description": "Show the Jujutsu bookmark and status for jj workspaces in the spaces sidebar",
-    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe/herdr-plugin.toml",
-    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe",
+    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/mroth.jj-status-f7e3ac54a4fe/26990-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/mroth.jj-status-f7e3ac54a4fe/26990-0/checkout",
     "enabled": true,
     "platforms": [
       "macos",
@@ -157,8 +309,57 @@
       "owner": "mroth",
       "repo": "herdr-jj-status",
       "resolved_commit": "40588ef743e1dd6a252b2e39765616584fd2e39e",
-      "managed_path": "/home/jacobsky/.config/herdr/plugins/github/mroth.jj-status-f7e3ac54a4fe",
-      "installed_unix_ms": 1785831656727
+      "managed_path": "/home/jacobsky/.config/herdr/plugins/github-installations/mroth.jj-status-f7e3ac54a4fe/26990-0/checkout",
+      "installed_unix_ms": 1792454955796
+    }
+  },
+  {
+    "plugin_id": "pradyb.which-key",
+    "name": "Which Key",
+    "version": "0.3.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Neovim-style which-key popup: press a leader, see the next keys, run herdr actions",
+    "manifest_path": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/11407-0/checkout/herdr-plugin.toml",
+    "plugin_root": "/home/jacobsky/dotfiles/.config/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/11407-0/checkout",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "actions": [
+      {
+        "id": "open",
+        "title": "Open which-key menu",
+        "contexts": [
+          "global"
+        ],
+        "command": [
+          "python3",
+          "launch.py"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "menu",
+        "title": "Which Key",
+        "placement": "popup",
+        "width": "70%",
+        "height": 16,
+        "command": [
+          "python3",
+          "whichkey.py"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "pradyb",
+      "repo": "herdr-which-key",
+      "resolved_commit": "cd760c7d03a32dc2f8cfa40eaab3cc9beeac116b",
+      "managed_path": "/home/jacobsky/.config/herdr/plugins/github-installations/pradyb.which-key-1d18e0f47280/11407-0/checkout",
+      "installed_unix_ms": 1792972549230
     }
   }
 ]

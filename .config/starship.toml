@@ -1,0 +1,48 @@
+format = """
+$directory\
+$custom\
+$line_break\
+$jobs\
+$character"""
+
+# Hide package & runtime version clutter
+[package]
+disabled = true
+
+[gradle]
+disabled = true
+
+[java]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[nodejs]
+disabled = true
+
+# Hide duplicate Git branch/commit info when using jj
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[git_state]
+disabled = true
+
+[cmd_duration]
+disabled = true
+# Or, if you only want it for genuinely long builds (e.g. >30s):
+# min_time = 30_000
+
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship"]
+format = "$output "
+
+[jobs]
+symbol = "✦ "
+number_threshold = 1
+symbol_threshold = 1
+style = "dimmed yellow"
